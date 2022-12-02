@@ -45,7 +45,7 @@ rotas.route('/funcionarios/:codigo')
    .get(controleFuncionarios.getFuncionarioPorCodigo)
 
 rotas.route('/notas')
-   .get(controleNotas.getNotaPorCodigo)
+   .get(controleNotas.getNota)
 
 rotas.route('/notas/:codigo')
    .get(controleNotas.getNotaPorCodigo)
