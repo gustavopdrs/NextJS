@@ -2,7 +2,7 @@ const {pool} = require('../config');
 const {request, response} = require('express');
 
 const getNota = (request, response) => {
-    pool.query('SELECT * FROM nota order by codigo',
+    pool.query('SELECT * FROM notas order by codigo',
         (error, results) => {
             if (error){
                 return response.status(400).json(
@@ -20,7 +20,7 @@ const getNota = (request, response) => {
 
 const getNotaPorCodigo = (request, response) => {
     const codigo = parseInt(request.params.codigo);
-    pool.query(`SELECT * FROM nota WHERE codigo = $1`,
+    pool.query(`SELECT * FROM notas WHERE codigo = $1`,
     [codigo],
     (error, results) => {
         if (error || results.rowCount == 0){
